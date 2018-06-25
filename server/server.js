@@ -36,9 +36,12 @@ if(!ObjectID.isValid(id))
 Todo.findById(id).then((todo)=>{
 if(!todo)
 {
+  console.log('todo not ');
   return res.status(404).send();
 }
  res.send({todo});
+}).catch((e)=>{
+  res.status(400).send();
 });
 });
 
